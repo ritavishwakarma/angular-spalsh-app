@@ -1,10 +1,9 @@
 <h1>Photo Search App</h1>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <input type="text" [(ngModel)]="search" placeholder="Search...">
+<input type="number" [(ngModel)]="perPage" placeholder="photosPerpage...">
 <button (click)="searchPhotos()">Search</button>
-<ul *ngFor= "let d of data | paginate: {itemsPerPage:5,currentPage:page }">
+<ul *ngFor= "let d of data ">
   <img src="{{d.urls.regular}}" alt="">
 </ul>
-<div>
-  <pagination-controls (pageChange)="page = $event"></pagination-controls>
-</div>
+<button (click)="searchPhotos()">Next</button>
